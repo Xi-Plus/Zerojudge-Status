@@ -117,15 +117,13 @@ foreach ($userlist as $key => $row){
     $sort_total_WA[$key]=$row["total"]["WA"];
 }
 array_multisort(
-$sort_count_AC,SORT_DESC,
-$sort_count_NA,SORT_ASC,
-$sort_total_AC,SORT_DESC,
-$sort_total_CE,SORT_ASC,
-$sort_total_WA,SORT_ASC,
-$userlist 
+	$sort_count_AC,SORT_DESC,
+	$sort_count_NA,SORT_ASC,
+	$sort_total_AC,SORT_DESC,
+	$sort_total_CE,SORT_ASC,
+	$sort_total_WA,SORT_ASC,
+	$userlist,SORT_ASC
 );
-consolelog($userlist );
-//uasort($userlist, 'cmp');
 ?>
 <style>
 .AC {
