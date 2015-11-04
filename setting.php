@@ -9,6 +9,12 @@ if(isset($_POST["user"])){
 	file_put_contents("user.txt",$content);
 }
 ?>
+<html>
+<head>
+	<title>Zerojudge-Status</title>
+	<meta charset="UTF-8">
+</head>
+<body>
 <form method="POST">
 <textarea name="prob" cols="20" rows="30">
 <?=htmlentities(@file_get_contents("prob.txt"))?>
@@ -19,3 +25,5 @@ if(isset($_POST["user"])){
 <br>
 <input type="submit" value="Submit">
 </form>
+</body>
+</html>

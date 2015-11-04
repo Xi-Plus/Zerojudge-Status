@@ -97,18 +97,6 @@ foreach ($res as $acctname => $acct){
 		@$userlist[$acctname]["count"][$status]++;
 	}
 }
-/*function cmp($a, $b) { 
-    if ($a["count"]["AC"] == $b["count"]["AC"]){
-        if ($a["count"]["NA"] == $b["count"]["NA"]){
-			 if ($a["total"]["AC"] == $b["total"]["AC"]){
-				return 0;
-			}
-			return ($a["total"]["AC"] < $b["total"]["AC"] ? 1 : -1);
-		}
-		return ($a["count"]["NA"] < $b["count"]["NA"] ? 1 : -1);
-    }
-    return ($a["count"]["AC"] < $b["count"]["AC"] ? 1 : -1);
-}*/
 foreach ($userlist as $key => $row){
     $sort_count_AC[$key]=$row["count"]["AC"];
     $sort_count_NA[$key]=$row["count"]["NA"];
@@ -125,17 +113,17 @@ array_multisort(
 	$userlist,SORT_ASC
 );
 ?>
-<style>
-.AC {
-	color: #00AA00;
-}
-.NA {
-	color: #FF0000;
-}
-.NT {
-	color: #FFFFFF;
-}
-</style>
+<html>
+<head>
+	<title>Zerojudge-Status</title>
+	<meta charset="UTF-8">
+	<style>
+	.AC {color: #00AA00;}
+	.NA {color: #FF0000;}
+	.NT {color: #FFFFFF;}
+	</style>
+</head>
+<body>
 排名原則：題單AC較多、題單NA較少、全部AC較多、全部CE較少、全部WA較少<br>
 <table class=MsoTableGrid border=1 cellpadding=3 style="border-collapse:collapse;border:none"><tr>
 <td>USER</td><td>LINK</td><td>AC</td><td>WA</td><td>TLE</td><td>MLE</td><td>OLE</td><td>RE</td><td>CE</td><td>NAME</td><td>AC</td><td>NA</td>
@@ -163,3 +151,5 @@ foreach ($userlist as $index => $user){
 	echo '</tr>';
 }
 ?>
+</body>
+</html>
